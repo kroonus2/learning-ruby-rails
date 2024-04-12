@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   root "articles#index"
 
   # Define rotas RESTful para o recurso 'articles', gerando rotas para todas as operações CRUD
-  resources :articles
+  # Além disso, aninha as rotas do recurso 'comments' dentro do recurso 'articles'
+  resources :articles do 
+    resources :comments
+  end
 end
