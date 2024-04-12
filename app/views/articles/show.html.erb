@@ -1,3 +1,15 @@
 <h1><%= @article.title %></h1>
 
 <p><%= @article.body %></p>
+
+<ul>
+  <!-- Link para a página de edição do artigo -->
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <!-- Link para excluir o artigo com uso do método turbo para requisição assíncrona e confirmação -->
+  <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,               
+                    turbo_confirm: "Are you sure?"      
+                  } %></li>
+</ul>
+ <!-- turbo_method: :delete -> Método HTTP DELETE -->
+ <!-- turbo_confirm: "msg" -> Mensagem de confirmação usando Turbo Streams -->
