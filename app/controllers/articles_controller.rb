@@ -50,6 +50,6 @@ class ArticlesController < ApplicationController
   # Método privado para definir os parâmetros permitidos para a criação e atualização de um artigo
   private
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :status)
   end
 end

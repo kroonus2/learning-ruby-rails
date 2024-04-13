@@ -14,6 +14,6 @@ class CommentsController < ApplicationController
     private
         # Método privado para permitir apenas os parâmetros necessários para criar um comentário
         def comment_params
-            params.require(:comment).permit(:commenter, :body)
+            params.require(:comment).permit(:commenter, :body, :status)
         end
 end

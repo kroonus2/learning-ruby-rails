@@ -1,10 +1,8 @@
 class Article < ApplicationRecord
-  # Define a associação 'has_many' com o modelo 'Comment', indicando que um artigo pode ter vários comentários
-  has_many :comments
-  
-  # Valida se o título está presente (não pode ser nulo ou uma string vazia)
-  validates :title, presence: true
+  include Visible
 
-  # Valida se o corpo está presente e tem pelo menos 10 caracteres de comprimento
+  has_many :comments
+
+  validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
 end
