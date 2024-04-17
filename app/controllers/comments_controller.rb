@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+    # Autenticação HTTP básica apenas para a ação :destroy
+    #http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+
     # Método para criar um novo comentário em um artigo
     def create
         # Encontra o artigo ao qual o comentário será associado
